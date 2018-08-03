@@ -30,6 +30,7 @@ public class ViewInjector {
             if(injector == null){
                 Class<?> injectorClass = Class.forName(className + "$$Injector");
                 injector = (Injector) injectorClass.newInstance();
+                INJECTOR_MAP.put(className, injector);
             }
             Finder finder = null;
             if(host instanceof Activity){
